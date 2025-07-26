@@ -1,6 +1,6 @@
 .DS_Store
-*.out
-*.o
-*.obj
-*.exe
 !*.cpp 
+PrimeNumber
+PrintDivisorr
+GCD
+tasks.json
