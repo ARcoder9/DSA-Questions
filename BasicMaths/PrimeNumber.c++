@@ -28,9 +28,25 @@ int Prime(int num){
     }
     return(count==2);  // factors is exactly 2 Return true, indicating that the number is prime. If the number of factors is not 2. Return false, indicating that the number is not prime
 }
+
+// Optimal Approach
+
+int PrimeNumber(int num){
+    int cnt = 0;
+    for(int i=1; i*i<=num; i++){
+        if(num%i==0){
+            cnt++;
+            if(i!=num/i){
+                cnt++;
+            }
+        }
+    }
+    return(cnt==2)?1:0;
+}
+
 int main()
 {
-    cout<<Prime(18);
+    cout<<PrimeNumber(18);
     return 0;
 }
 
