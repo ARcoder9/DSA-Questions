@@ -26,7 +26,6 @@ using namespace std;
 
 /* Brute Force Approach */
 
-/*
 int findGcd(int n1, int n2)
 {
     // Initialize gcd to 1
@@ -49,12 +48,12 @@ int findGcd(int n1, int n2)
     // Return the greatest
     // common divisor (gcd)
     return gcd;
-}   */
+}  
 
 
 /* Better Force Approach */
 
-/* int findGcd(int n1, int n2)
+int findGcd(int n1, int n2)
 {
     // Iterate from the minimum of
     // n1 and n2 down to 1
@@ -77,7 +76,7 @@ int findGcd(int n1, int n2)
     // return 1 (as 1 is always a
     // divisor of any number)
     return 1;
-}. */
+} 
 
 // Time Complexity: O(min(N1, N2))
 // Space Complexity: O(1)
@@ -103,6 +102,38 @@ gcd(10, 5) = gcd(10-5, 5) = gcd(5, 5)
 gcd(5, 5) = gcd(5-5, 5) = gcd(0, 5)
 
 Hence, return 5 as the gcd. */
+int gcd2(int a, int b){
+        // Continue loop as long as both
+        // a and b are greater than 0
+        while (a > 0 && b > 0)
+    {
+        // If a is greater than b,
+        // subtract b from a and update a
+        if (a > b)
+        {
+            // Update a to the remainder
+            // of a divided by b
+            a = a % b;
+        }
+        // If b is greater than or equal
+        // to a, subtract a from b and update b
+        else
+        {
+            // Update b to the remainder
+            // of b divided by a
+            b = b % a;
+        }
+    }
+    // Check if a becomes 0,
+    // if so, return b as the GCD
+    if (a == 0)
+    {
+        return b;
+    }
+    // If a is not 0,
+    // return a as the GCD
+    return a;
+}
 
 int gcd(int a, int b){
     while(a>0 && b>0){
